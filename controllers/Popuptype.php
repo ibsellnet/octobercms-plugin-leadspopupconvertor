@@ -13,6 +13,6 @@ class Popuptype extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ibsellnet.Leadspopupconvertor', 'main-menu-item-popups', 'side-menu-item-popups');
+        BackendMenu::setContext('Ibsellnet.Leadspopupconvertor', 'main-menu-item-popups', 'side-menu-item-popuptypes');
     }
 }

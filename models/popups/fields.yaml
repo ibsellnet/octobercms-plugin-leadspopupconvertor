@@ -4,7 +4,7 @@ fields:
         span: auto
         type: text
     popuptype:
-        label: Relation
+        label: Type
         nameFrom: name
         descriptionFrom: description
         span: auto
@@ -21,7 +21,7 @@ fields:
         type: number
         comment: 'Available only for popup type 1'
     type2_selector:
-        label: 'Selector identifier'
+        label: 'Selector identifier (only the ID)'
         span: auto
         type: text
         comment: 'Available only for popup type 2'

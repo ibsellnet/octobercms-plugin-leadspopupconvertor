@@ -1,35 +1,18 @@
 # octobercms-plugin-leadspopupconvertor
 An OpenSource plugin for OctoberCMS that helps you generate popups depending on more user's actions.
 
-# Clear cache widget details
-This report widget allows to clear OctoberCMS file cache with a single button click. 
-> The widget works only if your system is configured to use the file cache driver, which stores the serialized, cached objects in the filesystem!
+##### Type of popups you can create
+- After some seconds
+  + This popup will appear by default after 10 seconds a user stay on a page.
+     
+     The number of seconds can be changed if you fill in a new value when you create or edit a popup. 
+- When the user click a  button
+  + This type of popup will appear when the user will click on a button.
+      The button must have an identifier like an ID or a CLASS so you can se this up when you create the popup.
 
-**[Clear cache widget](http://octobercms.com/plugin/romanov-clearcachewidget) on OctoberCMS marketplace.**
-
-##### UI
-You can display a widget with a chart or like a single button. Display options shown in the screenshots.
-
-##### Features
-- Clear cms cache
-  + *cms/cache* 
-  + *cms/combiner*
-  + *cms/twig*
-- Clear backend cache
-  + *framework/cache*
-- Clear thumbs cache of uploaded images
-
-##### Available locales
-- ru
-- en
-- pt-br (by [Leonardo Shinagawa](https://github.com/shina))
-- cs (by [Vojta Svoboda](https://github.com/vojtasvoboda))
-- fr (by [Jean Marc BRUNO](https://github.com/jimibi))
-- it (by [Jean Marc BRUNO](https://github.com/jimibi))
-- hu (by [Szabó Gergő](https://github.com/gergo85))
-- tr (by [Sevdin Filiz](https://github.com/angelside))
-- nl (by [Alwin Drenth](https://github.com/adrenth))
-- sk (by [Marek Závacký](https://github.com/emzet))
+- Before user want's to leave the page
+  + When the user leave the page or intend to then a popup will appear.
+  
 
 # Documentation
 
@@ -39,16 +22,21 @@ You can display a widget with a chart or like a single button. Display options s
   1. Go to "INSTALL PRODUCTS" page;
   2. Search plugin `Romanov.ClearCacheWidget` and install it.
 
-  **After installation, you can add widget to dashboard.**
+  **After installation, you will find a menu on the backend named "LeadsPopupConvertor"**
 
-#### Widget configuration
-- **Show without chart**  
-Enable this option to display widget without chart.
-- **Chart size**  
-Radius value of chart. Optimal value is 200, but it's only my opinion :)
-- **Delete thumbs images**  
-If this option is enabled, thumbs of uploaded images also will be cleared.
-- **Path to the folder with thumbs**  
-Path to the folder in which stored thumbs cache. The path must be specified relative to the folder `storage`. Default value is `/app/uploads/public`.
-- **Regex for thumb file names**  
-Files with a name that matches the pattern will be deleted. For more details see [preg_match](http://php.net/manual/function.preg-match.php) function. Default value is `/^thumb_.*/`.
+#### USAGE
+- Popups menu  
+You can create here any popup type you need with your own information
+    + NAME: this field is informative for you
+    + TYPE: select the type of the popup you want to create
+    + CONTENT: editor where you can write anything you need 
+    + SECONDS: is used only if you chose the type popup "After some seconds"
+    + SELECTOR IDENTIFIER: used only if you choose the type popup "When the user click a  button"
+    
+
+##### Next version planning
+- a new popup type
+  + Specify an url special for this popup - not ready - still in development: You can place on top of you link ?popupurl=34
+- add forms inside popups
+
+[![Watch the video](https://img.youtube.com/vi/dk82-C0Drzk/0.jpg)](https://ibsell.net/en/plugins/leads-popup-convertor-october-cms-plugin)

@@ -20,4 +20,7 @@
     - builder_table_update_ibsellnet_leadspopupconvertor_popups_2.php
 1.0.8:
     - 'Updated table ibsellnet_leadspopupconvertor_popups'
-    - builder_table_update_ibsellnet_leadspopupconvertor_popups_3.php
+    - builder_table_update_ibsellnet_leadspopupconvertor_popups3.php
+1.0.9:
+    - 'fill in with initials popup types'
+    - seeder109.php
