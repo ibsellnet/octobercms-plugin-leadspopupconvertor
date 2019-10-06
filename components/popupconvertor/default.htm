@@ -1,0 +1,85 @@
+
+
+<!-- The Modal -->
+<div id="{{idPopupHTML}}" class="ibslpcmodal">
+
+    <!-- Modal content -->
+    <div class="ibslpcmodal-content">
+        <span class="close close{{idPopupHTML}}">&times;</span>
+        {{arrPopupInfo.content|raw}}
+    </div>
+
+</div>
+
+<script>
+
+    // Get the modal
+    window['ibslpcmodal{{idPopupHTML}}'] = document.getElementById("{{idPopupHTML}}");
+
+    // Get the <span> element that closes the ibslpcmodal
+    window['spanclosebtn{{idPopupHTML}}'] = document.getElementsByClassName("close{{idPopupHTML}}")[0];
+
+    // When the user clicks on <span> (x), close the ibslpcmodal
+    window['spanclosebtn{{idPopupHTML}}'].onclick = function() {
+        window['ibslpcmodal{{idPopupHTML}}'].style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the ibslpcmodal, close it
+    window.onclick = function(event) {
+        if (event.target == window['ibslpcmodal{{idPopupHTML}}']) {
+            window['ibslpcmodal{{idPopupHTML}}'].style.display = "none";
+        }
+    }
+
+
+
+    {% if(arrPopupInfo.popuptype_id == 1) %} {# ********* After some seconds ************** #}
+
+    {% set iMilisec = arrPopupInfo.type1_seconds * 1000 %}
+
+    setTimeout(function () {
+        window['ibslpcmodal{{idPopupHTML}}'].style.display = "block";
+    }, {{iMilisec}});
+
+    {% endif %}
+
+
+
+
+    {% if(arrPopupInfo.popuptype_id == 2) %}  {# ********* When the user click a  button  ************** #}
+    //click on a button
+    // Get the button that opens the ibslpcmodal
+    var btn = document.getElementById("{{arrPopupInfo.type2_selector}}");
+    // When the user clicks on the button, open the ibslpcmodal
+    btn.onclick = function() {
+        window['ibslpcmodal{{idPopupHTML}}'].style.display = "block";
+    }
+    {% endif %}
+
+
+
+
+    {% if(arrPopupInfo.popuptype_id == 3) %}  {# ********* Before user want's to leave the page  ************** #}
+
+        function onMouseOut(event) {
+            // If the mouse is near the top of the window, show the popup
+            // Also, do NOT trigger when hovering or clicking on selects
+            if (
+                event.clientY < 50 &&
+                event.relatedTarget == null &&
+                event.target.nodeName.toLowerCase() !== 'select') {
+                // Remove this event listener
+                document.removeEventListener("mouseout", onMouseOut);
+
+                // Show the popup
+                window['ibslpcmodal{{idPopupHTML}}'].style.display = "block";
+            }
+        }
+
+        document.addEventListener("mouseout", onMouseOut);
+
+    {% endif %}
+
+</script>
+
+

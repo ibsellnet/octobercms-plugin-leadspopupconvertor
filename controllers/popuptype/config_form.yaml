@@ -1,0 +1,10 @@
+name: Popuptype
+form: $/ibsellnet/leadspopupconvertor/models/popuptype/fields.yaml
+modelClass: Ibsellnet\Leadspopupconvertor\Models\Popuptype
+defaultRedirect: ibsellnet/leadspopupconvertor/popuptype
+create:
+    redirect: 'ibsellnet/leadspopupconvertor/popuptype/update/:id'
+    redirectClose: ibsellnet/leadspopupconvertor/popuptype
+update:
+    redirect: ibsellnet/leadspopupconvertor/popuptype
+    redirectClose: ibsellnet/leadspopupconvertor/popuptype

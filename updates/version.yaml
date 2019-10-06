@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table ibsellnet_leadspopupconvertor_modaltype'
+    - builder_table_create_ibsellnet_leadspopupconvertor_modaltype.php
+1.0.3:
+    - 'Updated table ibsellnet_leadspopupconvertor_modaltype'
+    - builder_table_update_ibsellnet_leadspopupconvertor_modaltypes.php
+1.0.4:
+    - 'Created table ibsellnet_leadspopupconvertor_popups'
+    - builder_table_create_ibsellnet_leadspopupconvertor_popups.php
+1.0.5:
+    - 'Updated table ibsellnet_leadspopupconvertor_modaltypes'
+    - builder_table_update_ibsellnet_leadspopupconvertor_popuptypes.php
+1.0.6:
+    - 'Updated table ibsellnet_leadspopupconvertor_popups'
+    - builder_table_update_ibsellnet_leadspopupconvertor_popups.php
+1.0.7:
+    - 'Updated table ibsellnet_leadspopupconvertor_popups'
+    - builder_table_update_ibsellnet_leadspopupconvertor_popups_2.php
+1.0.8:
+    - 'Updated table ibsellnet_leadspopupconvertor_popups'
+    - builder_table_update_ibsellnet_leadspopupconvertor_popups_3.php

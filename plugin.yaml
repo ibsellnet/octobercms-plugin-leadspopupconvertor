@@ -1,0 +1,20 @@
+plugin:
+    name: 'ibsellnet.leadspopupconvertor::lang.plugin.name'
+    description: 'ibsellnet.leadspopupconvertor::lang.plugin.description'
+    author: IbsellNET
+    icon: oc-icon-leanpub
+    homepage: ''
+navigation:
+    main-menu-item-popups:
+        label: LeadsPopupConvertor
+        url: ibsellnet/leadspopupconvertor/popups
+        icon: icon-leanpub
+        sideMenu:
+            side-menu-item-popups:
+                label: Popups
+                url: ibsellnet/leadspopupconvertor/popups
+                icon: icon-sitemap
+            side-menu-item-popuptypes:
+                label: 'Popup Types'
+                url: ibsellnet/leadspopupconvertor/popuptype
+                icon: icon-sliders

@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: ''
+        span: auto
+        type: textarea

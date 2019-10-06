@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    content:
+        label: content
+        type: text
+    popuptype[name]:
+        label: Type
+        type: number

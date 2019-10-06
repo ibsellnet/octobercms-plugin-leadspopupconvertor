@@ -1,0 +1,27 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    popuptype:
+        label: Relation
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    content:
+        label: Content
+        size: huge
+        span: full
+        type: richeditor
+    type1_seconds:
+        label: Seconds
+        span: auto
+        default: '10'
+        type: number
+        comment: 'Available only for popup type 1'
+    type2_selector:
+        label: 'Selector identifier'
+        span: auto
+        type: text
+        comment: 'Available only for popup type 2'
