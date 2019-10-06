@@ -18,9 +18,6 @@ An OpenSource plugin for OctoberCMS that helps you generate popups depending on 
 
 #### Installation
 - The plugin can be installed from the Marketplace. Please see the details [here](http://octobercms.com/help/site/projects#introduction).  
-- Install from backend:
-  1. Go to "INSTALL PRODUCTS" page;
-  2. Search plugin `Romanov.ClearCacheWidget` and install it.
 
   **After installation, you will find a menu on the backend named "LeadsPopupConvertor"**
 
