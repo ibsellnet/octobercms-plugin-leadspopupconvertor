@@ -1,4 +1,9 @@
 fields:
+    urltocopy:
+        label: This code should be placed on your page if you want this popup to be activated
+        type: partial
+        path: $/ibsellnet/leadspopupconvertor/models/popups/_content_urltocopy.htm
+        span: full
     name:
         label: Name
         span: auto
@@ -19,9 +24,10 @@ fields:
         span: auto
         default: '10'
         type: number
-        comment: 'Available only for popup type 1'
+        comment: 'Available only for popup type "After some seconds"'
     type2_selector:
         label: 'Selector identifier (only the ID)'
         span: auto
         type: text
-        comment: 'Available only for popup type 2'
+        comment: 'Available only for popup type "When the user click a  button"'
+

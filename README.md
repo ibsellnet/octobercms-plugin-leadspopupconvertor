@@ -29,7 +29,14 @@ You can create here any popup type you need with your own information
     + CONTENT: editor where you can write anything you need 
     + SECONDS: is used only if you chose the type popup "After some seconds"
     + SELECTOR IDENTIFIER: used only if you choose the type popup "When the user click a  button"
-    
+
+##### LAST UPDATES
+###### 2019-10-31
+  - on edit a popup you can copy paste directly the code into your page
+  - for popup type "after some seconds" the user may change the page but when he came back, of the time is there and he is on that page he will see the popup. This is helpful for big time like: show a popup after one hour (as example)
+  - after 2 hours, if the user will come back again on the web he will see again the popups that are set up, otherwise he will see them only once. 
+    + Example 1: set up an exit popup, when the user wants firt to go out he will see the popup, if the user open it again and want again to go out he will not see it anymore, only after another 2 hours.
+    + Example 2: if you set up a "after some seconds" popup type and you set up 10 seconda. After the user will get th epopup after 10 seconds, he refresh the page and he will not see it again after those 10 seconds, only if he eneterg again after 2 hours.
 
 ##### Next version planning
 - a new popup type

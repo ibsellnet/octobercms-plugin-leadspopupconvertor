@@ -35,11 +35,56 @@
 
     {% if(arrPopupInfo.popuptype_id == 1) %} {# ********* After some seconds ************** #}
 
-    {% set iMilisec = arrPopupInfo.type1_seconds * 1000 %}
+        {% set iMilisec = arrPopupInfo.type1_seconds * 1000 %}
 
-    setTimeout(function () {
-        window['ibslpcmodal{{idPopupHTML}}'].style.display = "block";
-    }, {{iMilisec}});
+        var storeMilisecValueName = 'ibsstoredmiliseconds'+{{arrPopupInfo.id }};
+        var storeDisplayOnceValueName = storeDisplayOnceValueName+{{arrPopupInfo.id }};
+
+        // var iMilisecondsToReset = 7200000; //2 hours
+        var iMilisecondsToReset = 10000; //10 seconds
+
+        var iMiisecJS = {{iMilisec}};
+
+        var date = new Date();
+        var dateCurrentTime = date.getTime();
+
+
+        if(localStorage.getItem(storeMilisecValueName) == null){
+            localStorage.setItem(storeMilisecValueName, dateCurrentTime);
+        }
+        if(localStorage.getItem(storeDisplayOnceValueName) == null){
+            localStorage.setItem(storeDisplayOnceValueName, 0);
+        }
+
+        //reset stored values
+        if(localStorage.getItem(storeMilisecValueName) != null && (dateCurrentTime - localStorage.getItem(storeMilisecValueName)) > iMilisecondsToReset){
+            localStorage.setItem(storeMilisecValueName, dateCurrentTime);
+            localStorage.setItem(storeDisplayOnceValueName, 0);
+        }
+
+    repeatAndCheckUntilPopupIsVisible();
+
+
+
+    function repeatAndCheckUntilPopupIsVisible(){
+        var date1 = new Date();
+        var dateCurrentTime1 = date1.getTime();
+        var dateStoredTime = localStorage.getItem(storeMilisecValueName);
+        var bIsAlreadyDisplayed = localStorage.getItem(storeDisplayOnceValueName);
+        if((dateCurrentTime1 - dateStoredTime > iMiisecJS) && bIsAlreadyDisplayed == 0){
+            window['ibslpcmodal{{idPopupHTML}}'].style.display = "block";
+            localStorage.setItem(storeDisplayOnceValueName, 1);
+        }else{
+
+            if(bIsAlreadyDisplayed==0){
+                setTimeout( repeatAndCheckUntilPopupIsVisible, 1000 );
+            }
+
+        }
+
+
+    }
+
 
     {% endif %}
 
@@ -62,12 +107,25 @@
     {% if(arrPopupInfo.popuptype_id == 3) %}  {# ********* Before user want's to leave the page  ************** #}
 
         function onMouseOut(event) {
+            var storeDisplayOnceValueName = storeDisplayOnceValueName+{{arrPopupInfo.id }};
+            if(localStorage.getItem(storeDisplayOnceValueName) == null){
+                localStorage.setItem(storeDisplayOnceValueName, 0);
+            }
+
+            //reset stored values
+            if(localStorage.getItem(storeMilisecValueName) != null && (dateCurrentTime - localStorage.getItem(storeMilisecValueName)) > iMilisecondsToReset){
+                localStorage.setItem(storeDisplayOnceValueName, 0);
+            }
+
+            var bIsAlreadyDisplayed = localStorage.getItem(storeDisplayOnceValueName);
+
             // If the mouse is near the top of the window, show the popup
             // Also, do NOT trigger when hovering or clicking on selects
             if (
                 event.clientY < 50 &&
                 event.relatedTarget == null &&
-                event.target.nodeName.toLowerCase() !== 'select') {
+                event.target.nodeName.toLowerCase() !== 'select'
+                && bIsAlreadyDisplayed == 0) {
                 // Remove this event listener
                 document.removeEventListener("mouseout", onMouseOut);
 
