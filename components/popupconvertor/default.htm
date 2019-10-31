@@ -31,22 +31,24 @@
         }
     }
 
-
+    var iMilisecondsToReset = 7200000; //2 hours
+    // var iMilisecondsToReset = 10000; //10 seconds
+    var date = new Date();
+    var dateCurrentTime = date.getTime();
+    var storeMilisecValueName = 'ibsstoredmiliseconds'+{{arrPopupInfo.id }};
 
     {% if(arrPopupInfo.popuptype_id == 1) %} {# ********* After some seconds ************** #}
 
         {% set iMilisec = arrPopupInfo.type1_seconds * 1000 %}
 
-        var storeMilisecValueName = 'ibsstoredmiliseconds'+{{arrPopupInfo.id }};
+
         var storeDisplayOnceValueName = storeDisplayOnceValueName+{{arrPopupInfo.id }};
 
-        // var iMilisecondsToReset = 7200000; //2 hours
-        var iMilisecondsToReset = 10000; //10 seconds
+
 
         var iMiisecJS = {{iMilisec}};
 
-        var date = new Date();
-        var dateCurrentTime = date.getTime();
+
 
 
         if(localStorage.getItem(storeMilisecValueName) == null){
@@ -114,6 +116,7 @@
 
             //reset stored values
             if(localStorage.getItem(storeMilisecValueName) != null && (dateCurrentTime - localStorage.getItem(storeMilisecValueName)) > iMilisecondsToReset){
+                localStorage.setItem(storeMilisecValueName, dateCurrentTime);
                 localStorage.setItem(storeDisplayOnceValueName, 0);
             }
 
@@ -131,6 +134,8 @@
 
                 // Show the popup
                 window['ibslpcmodal{{idPopupHTML}}'].style.display = "block";
+
+                localStorage.setItem(storeDisplayOnceValueName, 1);
             }
         }
 
