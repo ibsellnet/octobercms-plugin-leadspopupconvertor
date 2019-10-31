@@ -24,3 +24,6 @@
 1.0.9:
     - 'fill in with initials popup types'
     - seeder109.php
+1.0.10:
+    - 'Updated table ibsellnet_leadspopupconvertor_popups'
+    - builder_table_update_ibsellnet_leadspopupconvertor_popups_4.php
