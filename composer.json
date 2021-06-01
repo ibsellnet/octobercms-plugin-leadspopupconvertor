@@ -1,0 +1,8 @@
+{
+  "name": "ibsellnet/leadspopupconvertor-plugin",
+  "type": "october-plugin",
+  "description": "An OpenSource plugin for OctoberCMS that helps you generate popups depending on more user actions.",
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}
